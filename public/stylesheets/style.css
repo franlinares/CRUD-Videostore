@@ -1,0 +1,24 @@
+*, :after, :before {
+	box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/* Foto */
+
+.index{
+  background: url(https://www.liderempresarial.com/wp-content/uploads/2020/01/blockbuster-quiebra-1000x570.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: auto;
+}

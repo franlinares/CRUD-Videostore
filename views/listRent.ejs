@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <!--FONT AWESOME-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Rent</title>
+</head>
+<body>
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/movies">Blockbuster</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/users/listUsers">User</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/userForm">Register User</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/movies/listMovies">Movie</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/movies/movieForm">Register Film</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/rents/listRenting">Renting List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/rents/createRenting">Create Rent</a>
+          </li>
+        </ul>
+        <form action="/movies/search" method="get" class="form-inline my-2 my-lg-0" action="/rents/searchMovie/" method="post">
+          <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </div> 
+  <div class="conatiner-fluid">
+    <div class="row table justify-content-center align-items-center py-5 disp">
+      <div class="col-8 text-center" >
+        <table class="table bg-light ">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Client</th>
+              <th scope="col">Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Address</th>
+              <th scope="col">Movie</th>
+              <th scope="col">Gender</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- forEach() -->
+          <% result.forEach( function(rent){ %>  
+            <tr>
+              <td class="align-middle" scope="row"><%- rent.id_transaction %></td>
+              <td class="align-middle" ><%- rent.name %></td>
+              <td class="align-middle" ><%- rent.last_name %></td>
+              <td class="align-middle" ><%- rent.phone %></td>
+              <td class="align-middle" ><%- rent.address %></td>
+              <td class="align-middle" ><%- rent.title %></td>
+              <td class="align-middle" ><%- rent.gender %></td>
+              <td class="align-middle" > <a href="/rents/viewSingleRent/<%- rent.id_transaction %>"  class="btn btn-primary align-middle">Ver</a></td>
+              <td class="align-middle" > <a href="/rents/deleteRent/<%- rent.id_transaction %>" class="btn btn-danger align-middle">Eliminar</a></td>
+            </tr>
+          <% }); %>    
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>  
+</body>
+</html>

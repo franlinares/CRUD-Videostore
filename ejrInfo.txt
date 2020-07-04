@@ -1,0 +1,7 @@
+Crear una Web App
+                    Vamos a empezar desde movil
+                    Utilizar controladores
+                    CRUD COMPLETO
+                    Crear usarios, crear peliculas,
+                    Somos administradores. Guardar el id usuario y de la movie en la tabla intermedia
+                    BUSCARDOR
